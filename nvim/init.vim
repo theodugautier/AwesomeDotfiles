@@ -28,7 +28,6 @@ call plug#begin()
  Plug 'mhinz/vim-startify'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
- Plug 'kyazdani42/nvim-web-devicons'
  Plug 'dense-analysis/ale'
  Plug 'ap/vim-css-color'
 
@@ -37,9 +36,12 @@ call plug#begin()
  Plug 'tpope/vim-rails'
 
  " faster development
- Plug 'kien/ctrlp.vim'
+ " Plug 'kien/ctrlp.vim'
  Plug 'tpope/vim-endwise'
+ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+ Plug 'junegunn/fzf.vim'
 
+ " Discord Presence
  Plug 'stoozy/vimcord'
 call plug#end()
 
@@ -70,7 +72,10 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " CTRL + P configuration
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|log\'
+"let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|log\'
+" Fzf Mapping
+nnoremap <C-p> :GFiles<Cr>
+nnoremap <CS-F> :Ag<Cr>
 
 " Ruby / Rails Configuration
 au BufNewFile,BufRead *.arb set filetype=ruby
