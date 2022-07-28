@@ -21,26 +21,29 @@ set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
 call plug#begin()
+" Global
 Plug 'dracula/vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
-Plug 'preservim/nerdcommenter'
-Plug 'mhinz/vim-startify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ap/vim-css-color'
 
-" Language
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-
-" faster development
-Plug 'tpope/vim-endwise'
+" Searchs
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Faster development
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
+Plug 'ap/vim-css-color'
+Plug 'preservim/nerdcommenter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Linters
+Plug 'dense-analysis/ale'
 Plug 'bronson/vim-trailing-whitespace'
+
+" Rub development
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-endwise'
 
 " Javascript
 Plug 'maxmellon/vim-jsx-pretty'
@@ -54,6 +57,7 @@ call plug#end()
 " Set map leader
 let mapleader = ","
 
+" no arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -94,3 +98,7 @@ au BufNewFile,BufRead *.arb set filetype=ruby
 " Coc
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Ale Config
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '-'
