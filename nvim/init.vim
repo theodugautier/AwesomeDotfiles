@@ -42,6 +42,11 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'bronson/vim-trailing-whitespace'
 
+" Javascript
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+
 " Discord Presence
 Plug 'stoozy/vimcord'
 call plug#end()
@@ -78,6 +83,7 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
 
 " Fzf Mapping
 nnoremap <C-p> :GFiles<Cr>
