@@ -12,7 +12,7 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set relativenumber
 set wildmode=longest,list   " get bash-like tab completions
-set cc=100                  " set an 80 column border for good coding style
+set cc=80                   " set an 80 column border for good coding style
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set clipboard=unnamedplus   " using system clipboard
@@ -22,7 +22,7 @@ set ttyfast                 " Speed up scrolling in Vim
 
 call plug#begin()
 " Global
-Plug 'dracula/vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'scrooloose/nerdtree'
 
 " Searchs
@@ -54,6 +54,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'stoozy/vimcord'
 call plug#end()
 
+colorscheme dracula
+
 " Set map leader
 let mapleader = ","
 
@@ -78,7 +80,6 @@ endif
 
 syntax enable
 
-colorscheme dracula" open new split panes to right and below
 set splitright
 set splitbelow
 
@@ -102,3 +103,4 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Ale Config
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '-'
+
