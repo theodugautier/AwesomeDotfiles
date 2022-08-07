@@ -1,4 +1,5 @@
 set nocompatible            " disable compatibility to old-time vi
+set autoread
 set showmatch               " show matching
 set ignorecase              " case insensitive
 set mouse=v                 " middle-click paste with
@@ -20,10 +21,15 @@ filetype plugin on
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
+" Display whitespace characters
+set list
+set fillchars=vert:│
+
 call plug#begin()
 " Global
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'EdenEast/nightfox.nvim'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
 
 " Searchs
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -35,6 +41,9 @@ Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/tagbar'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-fugitive'
 
 " Linters
 Plug 'dense-analysis/ale'
@@ -44,6 +53,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
+Plug 'janko/vim-test'
 
 " Javascript
 Plug 'maxmellon/vim-jsx-pretty'
@@ -54,7 +64,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'stoozy/vimcord'
 call plug#end()
 
-colorscheme dracula
+colorscheme nightfox
 
 " Set map leader
 let mapleader = ","
@@ -97,10 +107,29 @@ nnoremap <C-p> :GFiles<Cr>
 au BufNewFile,BufRead *.arb set filetype=ruby
 
 " Coc
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ?
+      \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " Ale Config
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '-'
 
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" Launch fugitive's gstatus
+noremap <leader>gs :Gstatus<cr>
+
+" Mappings for vim-test
+nmap <silent> <leader>ts :TestSuite<cr>
