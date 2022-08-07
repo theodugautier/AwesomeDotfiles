@@ -1,0 +1,16 @@
+[core]
+  editor = nvim
+[init]
+  defaultBranch = main
+[alias]
+  oups = commit --amend --no-edit
+  cob = checkout -b
+  co = checkout
+  s = status
+  del = branch -D
+  done = !git push origin HEAD
+[user]
+	name = Théo Dugautier
+	email = theo.dugautier@protonmail.com
+[commit]
+	gpgsign = true
