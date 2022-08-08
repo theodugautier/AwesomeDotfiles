@@ -1,5 +1,7 @@
 # DotFiles
 
+## Pour Mac : [https://gitlab.com/theodugautier/awesome-dotfile/-/tree/mac-dotfiles](https://gitlab.com/theodugautier/awesome-dotfile/-/tree/mac-dotfiles)
+
 ![Screenshot](./screenshot.png)
 
 There are two branches, one for linux and one for mac.

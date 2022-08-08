@@ -9,10 +9,8 @@ stow --target=$HOME zsh
 mkdir -p ~/.config/nvim
 stow -t ~/.config/nvim vim
 
-if [ "$(uname)" != "Darwin" ]; then
-  mkdir -p ~/.config/awesome
-  stow -t ~/.config/awesome awesome
+mkdir -p ~/.config/awesome
+stow -t ~/.config/awesome awesome
 
-  mkdir -p ~/.config/rofi
-  stow -t ~/.config/rofi rofi
-fi
+mkdir -p ~/.config/rofi
+stow -t ~/.config/rofi rofi
