@@ -2,7 +2,7 @@
 
 There are two branches, one for linux and one for mac. 
 
-Pour Linux (awesome WM, Rofi, Xresources...) : [https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles](https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles)
+## Pour Linux (awesome WM, Rofi, Xresources...) : [https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles](https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles)
 
 ![Screenshot](./screenshot.png)
 
