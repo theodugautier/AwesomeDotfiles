@@ -21,10 +21,6 @@ filetype plugin on
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
-" Display whitespace characters
-set list
-set fillchars=vert:│
-
 call plug#begin()
 " Global
 Plug 'EdenEast/nightfox.nvim'
@@ -127,9 +123,6 @@ let g:ale_sign_warning = '-'
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
-
-" Launch fugitive's gstatus
-noremap <leader>gs :Gstatus<cr>
 
 " Mappings for vim-test
 nmap <silent> <leader>ts :TestSuite<cr>
