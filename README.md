@@ -6,17 +6,13 @@ There are two branches, one for linux and one for mac.
 
 ![Screenshot](./screenshot.png)
 
-**Neovim config**
-
-Install The Silver searcher for grep : `brew install the_silver_searcher`.
-
-Install Fzd for ctrlP : `brew install fzf ` and `$(brew --prefix)/opt/fzf/install`.
-
 **Installation**
 
-Before : install Stow on your system.
+Before : install Brew
 
-`chmod -x install.sh && ./install.sh`
+Install dependance with brew : `brew bundle`
+
+Create Symlink for dotfiles : `chmod -x install.sh && ./install.sh`
 
 **Dependencies** :
 

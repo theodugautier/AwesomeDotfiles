@@ -1,5 +1,7 @@
 #! /bin/sh
 
+$(brew --prefix)/opt/fzf/install
+
 stow --target=$HOME git
 stow --target=$HOME tmux
 stow --target=$HOME zsh

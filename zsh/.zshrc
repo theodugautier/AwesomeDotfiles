@@ -19,7 +19,7 @@ export TERM="xterm-256color"
 alias tmux="tmux -2"
 
 # chruby installation
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 
 export GPG_TTY=$(tty)
