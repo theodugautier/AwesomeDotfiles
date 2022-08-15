@@ -130,4 +130,4 @@ let g:UltiSnipsEditSplit="vertical"
 nmap <F8> :TagbarToggle<CR>
 
 " Mappings for vim-test
-
+nmap <silent> <leader>ts :TestSuite<cr>
