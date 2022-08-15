@@ -19,11 +19,12 @@ syntax on                   " syntax highlighting
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
+set t_Co=256
 set ttyfast                 " Speed up scrolling in Vim
 
 call plug#begin()
 " Global
-Plug 'EdenEast/nightfox.nvim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 
@@ -39,13 +40,16 @@ Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-fugitive'
+
+" Snippets
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Linters
 Plug 'dense-analysis/ale'
 Plug 'bronson/vim-trailing-whitespace'
 
-" Rub development
+" Ruby development
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
@@ -60,7 +64,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'stoozy/vimcord'
 call plug#end()
 
-colorscheme nightfox
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
 " Set map leader
 let mapleader = ","
@@ -115,14 +120,14 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
-
-" Ale Config
-let g:ale_sign_error = '•'
-let g:ale_sign_warning = '-'
+" UtliSnip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
 " Mappings for vim-test
-nmap <silent> <leader>ts :TestSuite<cr>
+

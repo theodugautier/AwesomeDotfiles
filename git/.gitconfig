@@ -13,5 +13,3 @@
 [user]
 	name = Théo Dugautier
 	email = theo.dugautier@protonmail.com
-[commit]
-	gpgsign = true

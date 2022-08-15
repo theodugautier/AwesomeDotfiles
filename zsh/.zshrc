@@ -1,10 +1,14 @@
-export ZSH="/Users/theo/.oh-my-zsh"
+export ZSH="/home/theodugautier/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
 plugins=(git history zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+
+# Frum ruby version manager for testing
+export PATH="$PATH:$HOME/.cargo/bin"
+eval "$(frum init)"
 
 # nvim configuration
 export NVM_DIR="$HOME/.nvm"
@@ -17,8 +21,3 @@ alias vi="nvim"
 # tmux config
 export TERM="xterm-256color"
 alias tmux="tmux -2"
-
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-export GPG_TTY=$(tty)
