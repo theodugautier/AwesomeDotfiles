@@ -1,7 +1,7 @@
 {
-  "coc.preferences.useQuickfixForLocations": true,
-  "coc.preferences.snippets.enable": true,
-  "coc.preferences.extensionUpdateCheck": "never",
-  "suggest.disableMenu": true,
-  "suggest.snippetIndicator": ""
+  "coc.preferences.formatOnSaveFiletypes": ["json", "css", "markdown"],
+  "eslint.autoFixOnSave": true,
+  "eslint.autoFix": true,
+  "tsserver.enableJavascript": false,
+  "suggest.noselect": false
 }

@@ -24,9 +24,11 @@ set ttyfast                 " Speed up scrolling in Vim
 
 call plug#begin()
 " Global
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'ayu-theme/ayu-vim'
+"Plug 'projekt0n/github-nvim-theme'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 
 " Searchs
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -37,11 +39,12 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdcommenter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
 Plug 'Raimondi/delimitMate'
+Plug 'janko/vim-test'
 
 " Snippets
+Plug 'ervandew/supertab'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -53,7 +56,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
-Plug 'janko/vim-test'
 
 " Javascript
 Plug 'maxmellon/vim-jsx-pretty'
@@ -64,8 +66,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'stoozy/vimcord'
 call plug#end()
 
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+"colorscheme github_light
+
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
 " Set map leader
 let mapleader = ","
@@ -107,23 +112,14 @@ nnoremap <C-p> :GFiles<Cr>
 " Ruby / Rails Configuration
 au BufNewFile,BufRead *.arb set filetype=ruby
 
-" Coc
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ?
-      \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" Supertab
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
 
 " UtliSnip
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 " tagbar
@@ -131,3 +127,4 @@ nmap <F8> :TagbarToggle<CR>
 
 " Mappings for vim-test
 nmap <silent> <leader>ts :TestSuite<cr>
+nmap <silent> <leader>tf :TestFile<cr>
