@@ -21,3 +21,5 @@ alias vi="nvim"
 # tmux config
 export TERM="xterm-256color"
 alias tmux="tmux -2"
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"

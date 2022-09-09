@@ -13,7 +13,7 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set relativenumber
 set wildmode=longest,list   " get bash-like tab completions
-set cc=80                   " set an 80 column border for good coding style
+set cc=100                  " set an 80 column border for good coding style
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set clipboard=unnamedplus   " using system clipboard
@@ -21,12 +21,15 @@ filetype plugin on
 set cursorline              " highlight current cursorline
 set t_Co=256
 set ttyfast                 " Speed up scrolling in Vim
+set splitright
+set splitbelow
 
 call plug#begin()
 " Global
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'ayu-theme/ayu-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/indentLine'
 
 " Searchs
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -37,11 +40,12 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdcommenter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
 Plug 'Raimondi/delimitMate'
+Plug 'janko/vim-test'
 
 " Snippets
+Plug 'ervandew/supertab'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -53,7 +57,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
-Plug 'janko/vim-test'
 
 " Javascript
 Plug 'maxmellon/vim-jsx-pretty'
@@ -64,11 +67,28 @@ Plug 'leafgarland/typescript-vim'
 Plug 'stoozy/vimcord'
 call plug#end()
 
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+" General setting {{
+set termguicolors
+let ayucolor="mirage"
+
+colorscheme ayu
+
+syntax enable
 
 " Set map leader
 let mapleader = ","
+
+" Vim jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal! g'\"" | endif
+endif
+
+" Ruby / Rails Configuration
+au BufNewFile,BufRead *.arb set filetype=ruby
+" }}
+
+" Mapping {{
 
 " no arrow keys
 map <up> <nop>
@@ -82,52 +102,43 @@ imap <right> <nop>
 
 " Indent all file
 map <leader>i mmgg=G`m
+" }}
 
-" Vim jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-        \| exe "normal! g'\"" | endif
-endif
+" Fzf Mapping {{
+nnoremap <C-p> :GFiles<Cr>
+" }}
 
-syntax enable
-
-set splitright
-set splitbelow
-
-" Nerd tree
+" Nerd tree {{
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
+" }}
 
-" Fzf Mapping
-nnoremap <C-p> :GFiles<Cr>
+" Supertab {{
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+" }}
 
-" Ruby / Rails Configuration
-au BufNewFile,BufRead *.arb set filetype=ruby
-
-" Coc
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ?
-      \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" UtliSnip
+" UtliSnip {{
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+" }}
 
-" tagbar
+" tagbar {{
 nmap <F8> :TagbarToggle<CR>
+" }}
 
-" Mappings for vim-test
+" Mappings for vim-test {{
 nmap <silent> <leader>ts :TestSuite<cr>
+nmap <silent> <leader>tf :TestFile<cr>
+" }}
+
+" IndentLine {{
+let g:indentLine_char = '|'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+" }}
