@@ -6,10 +6,6 @@ plugins=(git history zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Frum ruby version manager for testing
-export PATH="$PATH:$HOME/.cargo/bin"
-eval "$(frum init)"
-
 # nvim configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -24,3 +20,12 @@ export TERM="xterm-256color"
 alias tmux="tmux -2"
 
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+
+export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
+
+# rust
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# ruby version switcher
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh

@@ -17,16 +17,27 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 elif [[ $OSTYPE == 'linux'* ]]; then
   echo 'Add Linux .zshrc'
   stow --target=$HOME zsh-linux
+
+  echo 'Add .Xressources'
   stow --target=$HOME X
-
-  AWESOME_FOLDER=~/.config/awesome
-  [[ ! -d "$AWESOME_FOLDER" ]] && mkdir "$AWESOME_FOLDER"
-
-  stow -t ~/.config/awesome awesome
 
   ROFI_FOLDER=~/.config/rofi
   [[ ! -d "$ROFI_FOLDER" ]] && mkdir "$ROFI_FOLDER"
 
+  echo 'Add rofi Configuration'
   stow -t ~/.config/rofi rofi
+
+  AWESOME_FOLDER=~/.config/awesome
+  [[ ! -d "$AWESOME_FOLDER" ]] && mkdir "$AWESOME_FOLDER"
+
+  echo 'Add AwesomeWM Configuration'
+  stow -t ~/.config/awesome awesome
+
+  [[ -d "$AWESOME_FOLDER/lain" ]] && rm -r "$AWESOME_FOLDER/lain"
+  git clone https://github.com/lcpz/lain.git ~/.config/awesome/lain
 fi
 
+npm i -g typescript-language-server
+
+echo ''
+echo "Good Job ! So now you've got fucking dotfiles !"
