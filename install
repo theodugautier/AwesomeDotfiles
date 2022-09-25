@@ -1,0 +1,20 @@
+#! /bin/bash
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+  echo 'Add Mac .zshrc'
+  stow --target=$HOME zsh-mac
+elif [[ $OSTYPE == 'linux'* ]]; then
+  echo 'Add Linux .zshrc'
+  stow --target=$HOME zsh-linux
+fi
+
+echo 'Add .gitconfig'
+stow --target=$HOME git
+echo 'Add tmux.conf'
+stow --target=$HOME tmux
+
+NVIM_FOLDER=~/.config/nvim
+[[ ! -d "$NVIM_FOLDER" ]] && mkdir "$NVIM_FOLDER"
+
+echo 'Add neovim'
+stow -t $HOME/.config/nvim nvim

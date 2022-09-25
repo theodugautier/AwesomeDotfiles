@@ -13,6 +13,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias vim="nvim"
 alias vi="nvim"
+alias ls="lsd -l"
 
 # tmux config
 export TERM="xterm-256color"
@@ -23,3 +24,5 @@ source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 
 export GPG_TTY=$(tty)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
