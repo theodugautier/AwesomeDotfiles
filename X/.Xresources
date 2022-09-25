@@ -20,7 +20,7 @@
 
 ! xterm
 
-xterm*faceName: Menlo-13
+xterm*faceName: Hack Nerd Font Mono:size=14
 xterm*utf8: 2
 xterm*internalBorder: 15
 xterm*selectToClipboard: true

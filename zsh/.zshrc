@@ -17,6 +17,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias vim="nvim"
 alias vi="nvim"
+alias ls="lsd -l"
 
 # tmux config
 export TERM="xterm-256color"
