@@ -1,0 +1,32 @@
+#! /bin/bash
+
+echo 'Add .gitconfig'
+stow --target=$HOME git
+echo 'Add tmux.conf'
+stow --target=$HOME tmux
+
+NVIM_FOLDER=~/.config/nvim
+[[ ! -d "$NVIM_FOLDER" ]] && mkdir "$NVIM_FOLDER"
+
+echo 'Add neovim'
+stow -t $HOME/.config/nvim nvim
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+  echo 'Add Mac .zshrc'
+  stow --target=$HOME zsh-mac
+elif [[ $OSTYPE == 'linux'* ]]; then
+  echo 'Add Linux .zshrc'
+  stow --target=$HOME zsh-linux
+  stow --target=$HOME X
+
+  AWESOME_FOLDER=~/.config/awesome
+  [[ ! -d "$AWESOME_FOLDER" ]] && mkdir "$AWESOME_FOLDER"
+
+  stow -t ~/.config/awesome awesome
+
+  ROFI_FOLDER=~/.config/rofi
+  [[ ! -d "$ROFI_FOLDER" ]] && mkdir "$ROFI_FOLDER"
+
+  stow -t ~/.config/rofi rofi
+fi
+
