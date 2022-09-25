@@ -1,28 +1,23 @@
-# Awesome DotFiles
+# DotFiles
+
+There are two branches, one for linux and one for mac. 
+
+## Pour Linux (awesome WM, Rofi, Xresources...) : [https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles](https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles)
 
 ![Screenshot](./screenshot.png)
 
-**Neovim config**
+**Installation**
 
-Install The Silver searcher for grep : `brew install the_silver_searcher` or `apt install silversearcher-ag`.
-Install Fzd for ctrlP : `brew install fzf ` and `$(brew --prefix)/opt/fzf/install`  or `sudo apt install fzf`
+Before : install Brew
 
-**Install Script**
+Install dependance with brew : `brew bundle`
 
-Before : install Stow on your system.
-
-`chmod -x install.sh && ./install.sh`
+Create Symlink for dotfiles : `chmod -x install.sh && ./install.sh`
 
 **Dependencies** :
 
-- Awesome WM
 - neovim
 - tmux
-- lains
-- rofi
-- i3lock-fancy-multimonitor
-- xterm
-- firefox
 - git
 - zsh
-- Xterm
+- iterm

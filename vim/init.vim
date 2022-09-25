@@ -19,13 +19,16 @@ syntax on                   " syntax highlighting
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
+set t_Co=256
 set ttyfast                 " Speed up scrolling in Vim
 
 call plug#begin()
 " Global
-Plug 'EdenEast/nightfox.nvim'
+Plug 'ayu-theme/ayu-vim'
+"Plug 'projekt0n/github-nvim-theme'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 
 " Searchs
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -36,20 +39,23 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdcommenter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-fugitive'
+Plug 'janko/vim-test'
+
+" Snippets
+Plug 'ervandew/supertab'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Linters
 Plug 'dense-analysis/ale'
 Plug 'bronson/vim-trailing-whitespace'
 
-" Rub development
+" Ruby development
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
-Plug 'janko/vim-test'
 
 " Javascript
 Plug 'maxmellon/vim-jsx-pretty'
@@ -60,7 +66,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'stoozy/vimcord'
 call plug#end()
 
-colorscheme nightfox
+"colorscheme github_light
+
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
 " Set map leader
 let mapleader = ","
@@ -102,27 +112,19 @@ nnoremap <C-p> :GFiles<Cr>
 " Ruby / Rails Configuration
 au BufNewFile,BufRead *.arb set filetype=ruby
 
-" Coc
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ?
-      \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" Supertab
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
-
-" Ale Config
-let g:ale_sign_error = '•'
-let g:ale_sign_warning = '-'
+" UtliSnip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
 " Mappings for vim-test
 nmap <silent> <leader>ts :TestSuite<cr>
+nmap <silent> <leader>tf :TestFile<cr>

@@ -13,5 +13,8 @@
 [user]
 	name = Théo Dugautier
 	email = theo.dugautier@protonmail.com
-[commit]
-	gpgsign = true
+	;signingkey = 26B4CB2AFB01DFE559B2379665512F7E307721E6
+;[gpg]
+	;program = /opt/homebrew/bin/gpg
+;[commit]
+	;gpgsign = true
