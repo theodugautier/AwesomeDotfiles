@@ -1,23 +1,38 @@
 # DotFiles
 
-There are two branches, one for linux and one for mac. 
-
-## Pour Linux (awesome WM, Rofi, Xresources...) : [https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles](https://gitlab.com/theodugautier/awesome-dotfile/-/tree/linux-dotfiles)
-
 ![Screenshot](./screenshot.png)
 
-**Installation**
+## Setup
+
+### Linux (debian)
+
+  Before : install Stow on your system. Installation de Node.
+
+Install The Silver searcher for grep : `apt install silversearcher-ag`.
+Install Fzf for ctrl-p : `sudo apt install fzf`
+
+
+### MAC OS :
 
 Before : install Brew
 
 Install dependance with brew : `brew bundle`
 
-Create Symlink for dotfiles : `chmod -x install.sh && ./install.sh`
+
+### Install Script
+
+Create Symlink for dotfiles : `chmod -x install && ./install`
 
 **Dependencies** :
 
+- Awesome WM
 - neovim
 - tmux
+- lains
+- rofi
+- i3lock-fancy-multimonitor
+- xterm
+- firefox
 - git
 - zsh
-- iterm
+- Xterm

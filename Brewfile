@@ -24,6 +24,8 @@ brew "nvim"
 brew "wget"
 brew "yarn"
 brew "zsh-autosuggestions"
+brew "lsd"
+brew "lua-language-server"
 
 cask "firefox"
 cask "slack"
