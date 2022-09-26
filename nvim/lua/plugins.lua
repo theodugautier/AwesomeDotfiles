@@ -69,11 +69,14 @@ packer.startup(function(use)
   use 'pangloss/vim-javascript'
   use 'leafgarland/typescript-vim'
 
+  -- flutter
+  use 'akinsho/flutter-tools.nvim'
+
   -- discord presences
   use 'jparise/vim-graphql'
 
   -- discord presences
-  use 'stoozy/vimcord'
+  use 'andweeb/presence.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

@@ -1,5 +1,6 @@
-vim.keymap.set('', '<C-f>', ':Neotree source=filesystem action=focus toggle<CR>')
-vim.keymap.set('', '<C-t>', ':Neotree float git_status<CR>')
+vim.keymap.set('', '<C-f>', ':Neotree source=filesystem action=focus reveal<CR>')
+vim.keymap.set('', '<C-t>', ':Neotree filesystem toggle<CR>')
+vim.keymap.set('', '<leader>f', ':Neotree git_status toggle<CR>')
 
 require("neo-tree").setup({
   window = {

@@ -29,3 +29,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # ruby version switcher
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+# Flutter
+export CHROME_EXECUTABLE=/snap/bin/chromium
+export PATH="$PATH:/home/theodugautier/snap/flutter/common/flutter/bin"

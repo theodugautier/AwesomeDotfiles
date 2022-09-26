@@ -16,7 +16,7 @@ telescope.setup {
 
 vim.keymap.set('n', '<C-p>',
 function()
-  builtin.find_files({
+  builtin.git_files({
     hidden = true
   })
 end)
