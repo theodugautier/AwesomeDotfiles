@@ -1,5 +1,5 @@
-local status, cmp = pcall(require, "cmp")
-if (not status) then return end
+local ok, cmp = pcall(require, "cmp")
+if (not ok) then return end
 
 local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
@@ -49,6 +49,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = 'vsnip' }
   }),
   formatting = {
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })

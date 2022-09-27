@@ -1,8 +1,8 @@
-local status, telescope = pcall(require, "telescope")
-if (not status) then return end
+local ok, telescope = pcall(require, 'telescope')
+if (not ok) then return end
 
 local actions = require('telescope.actions')
-local builtin = require("telescope.builtin")
+local builtin = require('telescope.builtin')
 
 telescope.setup {
   defaults = {
@@ -14,8 +14,7 @@ telescope.setup {
   }
 }
 
-vim.keymap.set('n', '<C-p>',
-function()
+vim.keymap.set('n', '<C-p>', function()
   builtin.git_files({
     hidden = true
   })

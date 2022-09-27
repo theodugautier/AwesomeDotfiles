@@ -26,7 +26,20 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'kyazdani42/nvim-web-devicons' -- File icons
 
+  -- others utilities
+  use 'nvim-telescope/telescope.nvim' -- equivalent ctrl-p, fzf
+  use({ "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } }) -- silver search with telescope
+  use 'windwp/nvim-autopairs' -- auto brackets pairing
+  use 'lewis6991/gitsigns.nvim' -- git graphic helpers
+  use 'bronson/vim-trailing-whitespace' -- detect trailing-whitespace
+  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
+  use "luukvbaal/stabilize.nvim" -- to fix my fucking headache when openclosed panes
+  use 'David-Kunz/markid' -- treesitter same object same color
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- better file colors
+
   -- LSP and completion
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'neovim/nvim-lspconfig' -- LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -40,20 +53,6 @@ return packer.startup(function(use)
   -- Snippets
   use 'L3MON4D3/LuaSnip'
   use 'honza/vim-snippets'
-
-  -- others utilities
-  use 'nvim-telescope/telescope.nvim' -- equivalent ctrl-p, fzf
-  use({ "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } }) -- silver search with telescope
-  use 'windwp/nvim-autopairs' -- auto brackets pairing
-  use 'lewis6991/gitsigns.nvim' -- git graphic helpers
-  use 'bronson/vim-trailing-whitespace' -- detect trailing-whitespace
-  use {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = {
-      "MunifTanjim/nui.nvim"
-    }
-  }
 
   -- code fasters
   use 'Raimondi/delimitMate' -- auto close colon
