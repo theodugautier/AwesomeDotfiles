@@ -12,12 +12,13 @@ end
 local packer_bootstrap = ensure_packer()
 
 local status, packer = pcall(require, "packer")
+
 if (not status) then
   print("Packer is not installed")
   return
 end
 
-packer.startup(function(use)
+return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- appearances
@@ -73,9 +74,10 @@ packer.startup(function(use)
   use 'leafgarland/typescript-vim'
 
   -- flutter
-  use 'akinsho/flutter-tools.nvim'
+  use 'akinsho/flutter-tools.nvim' -- lsp for flutter
+  use 'dart-lang/dart-vim-plugin' -- dart highlight
 
-  -- discord presences
+  -- GraphQl
   use 'jparise/vim-graphql'
 
   -- discord presences
