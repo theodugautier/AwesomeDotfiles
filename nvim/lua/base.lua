@@ -25,7 +25,6 @@ vim.opt.cursorline = true -- highlight current cursorline
 vim.opt.ttyfast = true -- Speed up scrolling in Vim
 vim.opt.wildignore:append { '*/node_modules/*' }
 
-vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
 
 vim.opt.formatoptions:append { 'r' } -- Add asterisks in block comments
@@ -36,5 +35,3 @@ vim.opt.winblend = 0
 vim.opt.wildoptions = 'pum'
 vim.opt.pumblend = 5
 vim.opt.background = 'dark'
-
-vim.cmd('au BufNewFile,BufRead *.arb set filetype=ruby')

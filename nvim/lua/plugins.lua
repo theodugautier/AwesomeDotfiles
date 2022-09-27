@@ -35,7 +35,10 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'jose-elias-alvarez/null-ls.nvim' -- inject LSP diagnostics, code actions
   use 'glepnir/lspsaga.nvim' -- LSP UIs
-  use 'L3MON4D3/LuaSnip' -- snippets
+
+  -- Snippets
+  use 'L3MON4D3/LuaSnip'
+  use 'honza/vim-snippets'
 
   -- others utilities
   use 'nvim-telescope/telescope.nvim' -- equivalent ctrl-p, fzf
