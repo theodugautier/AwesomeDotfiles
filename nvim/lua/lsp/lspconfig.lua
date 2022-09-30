@@ -63,9 +63,7 @@ nvim_lsp.flow.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.solargraph.setup {
-  capabilities = capabilities
-}
+nvim_lsp.solargraph.setup {}
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,

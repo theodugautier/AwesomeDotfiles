@@ -34,8 +34,6 @@ return packer.startup(function(use)
   use 'bronson/vim-trailing-whitespace' -- detect trailing-whitespace
   use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
   use "luukvbaal/stabilize.nvim" -- to fix my fucking headache when openclosed panes
-  use 'David-Kunz/markid' -- treesitter same object same color
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- better file colors
 
   -- LSP and completion
   use 'williamboman/mason.nvim'

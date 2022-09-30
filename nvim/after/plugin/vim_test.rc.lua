@@ -1,4 +1,4 @@
-local ok, vim_test = pcall(require, 'vim-test')
+local ok, _ = pcall(require, 'vim-test')
 if (not ok) then return end
 
 vim.keymap.set('n', '<silent> <leader>tf', ':TestFile<CR>')
