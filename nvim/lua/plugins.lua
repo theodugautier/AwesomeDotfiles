@@ -56,6 +56,8 @@ return packer.startup(function(use)
   use 'tpope/vim-surround' -- just tpope the GOD OF VIM
   use 'ap/vim-css-color' -- colors display
   use 'terrortylor/nvim-comment' -- comments tools
+  use 'mhartington/formatter.nvim' -- format code
+  use 'AndrewRadev/splitjoin.vim' -- refactor plugin
 
   -- Ruby development
   use 'vim-ruby/vim-ruby'

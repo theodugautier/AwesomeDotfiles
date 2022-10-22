@@ -11,7 +11,12 @@ telescope.setup {
         ["q"] = actions.close
       },
     },
-  }
+  },
+  pickers = {
+    git_files = {
+      theme = 'dropdown',
+    }
+  },
 }
 
 vim.keymap.set('n', '<C-p>', function()
