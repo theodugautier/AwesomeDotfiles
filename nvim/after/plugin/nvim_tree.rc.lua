@@ -1,4 +1,4 @@
-local ok, tree = pcall(require, 'nvim-tree')
+  local ok, tree = pcall(require, 'nvim-tree')
 if (not ok) then return end
 
 vim.keymap.set('', '<C-f>', ':NvimTreeFindFile<CR>')
@@ -11,5 +11,12 @@ vim.g.loaded_netrwPlugin = 1
 tree.setup {
   git = {
     ignore = false
+  },
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
+      }
+    }
   }
 }

@@ -25,11 +25,12 @@ return packer.startup(function(use)
   use 'folke/tokyonight.nvim' -- theme
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'kyazdani42/nvim-web-devicons' -- File icons
+  use 'nvim-treesitter/nvim-treesitter'
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
   }
-  use 'm-demare/hlargs.nvim'
+  use { 'm-demare/hlargs.nvim' }
 
   -- LSP and completion
   use 'williamboman/mason.nvim'
@@ -51,7 +52,7 @@ return packer.startup(function(use)
   -- code fasters
   use 'Raimondi/delimitMate' -- auto close colon
   use 'mattn/emmet-vim' -- emmet for vim
-  use 'klen/nvim-test' -- launch tests in nvim
+  -- use 'klen/nvim-test' -- launch tests in nvim
   use 'tpope/vim-surround' -- just tpope the GOD OF VIM
   use 'ap/vim-css-color' -- colors display
   use 'terrortylor/nvim-comment' -- comments tools
