@@ -10,7 +10,6 @@ brew "chruby"
 brew "ruby-install"
 brew "openssl"
 brew "ctags", link: false
-brew "fzf"
 brew "git"
 brew "imagemagick"
 brew "node@12"

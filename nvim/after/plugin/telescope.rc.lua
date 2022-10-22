@@ -28,8 +28,8 @@ vim.keymap.set('n', '\\\\', function()
   builtin.buffers()
 end)
 
-vim.keymap.set('n', ';t', function()
-  builtin.help_tags()
+vim.keymap.set('n', ';g', function()
+  builtin.git_status()
 end)
 
 vim.keymap.set('n', ';;', function()

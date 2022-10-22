@@ -9,15 +9,12 @@
   Before : install Stow on your system. Installation de Node.
 
 Install The Silver searcher for grep : `apt install silversearcher-ag`.
-Install Fzf for ctrl-p : `sudo apt install fzf`
-
 
 ### MAC OS :
 
 Before : install Brew
 
 Install dependance with brew : `brew bundle`
-
 
 ### Install Script
 
