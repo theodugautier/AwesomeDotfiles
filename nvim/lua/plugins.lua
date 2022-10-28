@@ -25,16 +25,13 @@ return packer.startup(function(use)
   use 'folke/tokyonight.nvim' -- theme
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'kyazdani42/nvim-web-devicons' -- File icons
-  use 'nvim-treesitter/nvim-treesitter'
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
-  }
-  use { 'm-demare/hlargs.nvim' }
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
+  -- }
+  -- use { 'm-demare/hlargs.nvim' }
 
   -- LSP and completion
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'neovim/nvim-lspconfig' -- LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
