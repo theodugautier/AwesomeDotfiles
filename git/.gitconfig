@@ -12,4 +12,7 @@
   done = !git push origin HEAD
 [user]
 	name = Théo Dugautier
-	email = theo.dugautier@protonmail.com
+	email = theo@hoggo.com
+	signingkey = 9323DA88230C8BCF
+[commit]
+	gpgsign = true

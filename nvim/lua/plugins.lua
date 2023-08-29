@@ -22,7 +22,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- appearances
-  use 'folke/tokyonight.nvim' -- theme
+  use 'projekt0n/github-nvim-theme'
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'kyazdani42/nvim-web-devicons' -- File icons
   -- use {
@@ -41,6 +41,9 @@ return packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'jose-elias-alvarez/null-ls.nvim' -- inject LSP diagnostics, code actions
   use 'glepnir/lspsaga.nvim' -- LSP UIs
+
+  -- GO
+  use 'ray-x/go.nvim'
 
   -- Snippets
   use 'L3MON4D3/LuaSnip'

@@ -25,4 +25,8 @@ source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 
 export GPG_TTY=$(tty)
 
+export RUBY_YJIT_ENABLE=1
+
+export PGGSSENCMODE=disable
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
