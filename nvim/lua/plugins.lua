@@ -87,6 +87,7 @@ return packer.startup(function(use)
   use 'bronson/vim-trailing-whitespace' -- detect trailing-whitespace
   use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
   use "luukvbaal/stabilize.nvim" -- to fix my fucking headache when openclosed panes
+  use 'f-person/git-blame.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

@@ -1,4 +1,5 @@
 local ok, lualine = pcall(require, "lualine")
+local git_blame = require('gitblame')
 if (not ok) then return end
 
 require('lualine').setup {
@@ -22,8 +23,11 @@ require('lualine').setup {
     },
     sections = {
       lualine_a = {'mode'},
-      lualine_b = {'branch', 'diff', 'diagnostics'},
-      lualine_c = {'filename'},
+      lualine_b = {'branch', 'filename'},
+      -- add git blame text
+      lualine_c = {
+          { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
+      },
       lualine_x = {'encoding', 'fileformat', 'filetype'},
       lualine_y = {'progress'},
       lualine_z = {'location'}
