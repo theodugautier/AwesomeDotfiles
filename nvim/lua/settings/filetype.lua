@@ -12,4 +12,7 @@ vim.api.nvim_exec([[
   au BufNewFile,BufRead *.arb set filetype=ruby
   au BufRead,BufNewFile *.ejs setfiletype html
   au FileType TelescopePrompt setlocal nocursorline
+  au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+  au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+  au BufRead,BufNewFile mix.lock set filetype=elixir
 ]], true)

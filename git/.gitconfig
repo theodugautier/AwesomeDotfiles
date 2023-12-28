@@ -13,6 +13,6 @@
 [user]
 	name = Théo Dugautier
 	email = theo@hoggo.com
-	signingkey = 9323DA88230C8BCF
+	; signingkey = 9323DA88230C8BCF
 [commit]
-	gpgsign = true
+	; gpgsign = true

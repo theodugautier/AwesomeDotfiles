@@ -33,3 +33,9 @@ source /usr/local/share/chruby/auto.sh
 # Flutter
 export CHROME_EXECUTABLE=/snap/bin/chromium
 export PATH="$PATH:/home/theodugautier/snap/flutter/common/flutter/bin"
+
+# For Android
+export ANDROID_HOME=${HOME}/Android/Sdk
+
+alias luamake="/home/theodugautier/projects/lua-language-server/3rd/luamake/luamake"
+export PATH=$PATH:/path/to/lua-language-server/bin/Linux

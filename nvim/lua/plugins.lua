@@ -73,6 +73,9 @@ return packer.startup(function(use)
   use 'akinsho/flutter-tools.nvim' -- lsp for flutter
   use 'dart-lang/dart-vim-plugin' -- dart highlight
 
+  -- Elixir
+  use 'elixir-editors/vim-elixir'
+
   -- GraphQl
   use 'jparise/vim-graphql'
 
