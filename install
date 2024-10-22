@@ -14,6 +14,8 @@ stow -t $HOME/.config/nvim nvim
 if [[ $OSTYPE == 'darwin'* ]]; then
   echo 'Add Mac .zshrc'
   stow --target=$HOME zsh-mac
+  stow -t $HOME/.config/yabai yabai
+  stow -t $HOME/.config/skhd skhd
 elif [[ $OSTYPE == 'linux'* ]]; then
   echo 'Add Linux .zshrc'
   stow --target=$HOME zsh-linux
