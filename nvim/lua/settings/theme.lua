@@ -1,20 +1,28 @@
 require('github-theme').setup({
-  theme_style = "dark_default",
-  function_style = "NONE",
-  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+  options = {
+    styles = {
+      functions = "NONE"
+    },
+    darken = { -- Darken floating windows and sidebar-like windows
+      floats = false,
+      sidebars = {
+        enable = true,
+        list = {"qf", "vista_kind", "terminal", "packer"}, -- Apply dark background to specific windows
+      },
+    },
+  },
+  palettes = {
+    all = {
+    -- Each palette defines these colors:
+    --   black, gray, blue, green, magenta, pink, red, white, yellow, cyan
+    --
+    -- These colors have 2 shades: base, and bright
 
-  -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-  colors = {hint = "orange", error = "#ff0000"},
-
-  -- Overwrite the highlight groups
-  overrides = function(c)
-    return {
-      htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "NONE"},
-      DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
-      -- this will remove the highlight groups
-      TSField = {},
-    }
-  end
+    -- Passing a string sets the base
+    hint = "orange",
+    error = "#ff0000"
+  },
+  },
 })
 
-vim.cmd[[colorscheme github_*]]
+vim.cmd[[colorscheme github_dark_high_contrast]]
