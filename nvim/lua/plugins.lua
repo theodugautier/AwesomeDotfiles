@@ -81,6 +81,9 @@ return packer.startup(function(use)
   -- discord presences
   use 'andweeb/presence.nvim'
 
+  -- IA
+  use { "zbirenbaum/copilot.lua" }
+
   -- others utilities
   use 'nvim-telescope/telescope.nvim' -- equivalent ctrl-p, fzf
   use({ "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } }) -- silver search with telescope
