@@ -1,28 +1,40 @@
 require('github-theme').setup({
+  colorscheme = "dark_default",
   options = {
-    styles = {
-      functions = "NONE"
-    },
-    darken = { -- Darken floating windows and sidebar-like windows
-      floats = false,
+    darken = {
+      enabled = true,
       sidebars = {
-        enable = true,
-        list = {"qf", "vista_kind", "terminal", "packer"}, -- Apply dark background to specific windows
-      },
+        list = {"qf", "vista_kind", "terminal", "packer"}
+      }
     },
+    styles = {
+      comments = 'italic',
+      functions = 'NONE',
+      keywords = 'bold',
+      variables = 'NONE',
+      conditionals = 'NONE',
+      constants = 'NONE',
+      numbers = 'NONE',
+      operators = 'NONE',
+      strings = 'NONE',
+      types = 'NONE',
+    }
   },
+  -- Change the "hint" color to the "orange" color, and make the "error" color bright red
   palettes = {
     all = {
-    -- Each palette defines these colors:
-    --   black, gray, blue, green, magenta, pink, red, white, yellow, cyan
-    --
-    -- These colors have 2 shades: base, and bright
+      hint = "orange",
+      error = "#ff0000"
+    }
+  },
 
-    -- Passing a string sets the base
-    hint = "orange",
-    error = "#ff0000"
-  },
-  },
+  groups = {
+    all = {
+      DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
+      -- this will remove the highlight groups
+      TSField = {},
+    }
+  }
 })
 
 vim.cmd[[colorscheme github_dark_high_contrast]]
