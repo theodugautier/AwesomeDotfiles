@@ -18,6 +18,10 @@ alias ls="lsd -l"
 # tmux config
 export TERM="xterm-256color"
 alias tmux="tmux -2"
+alias lg="lazygit"
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export PGGSSENCMODE=disable
 
 # chruby installation
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
@@ -27,6 +31,9 @@ export GPG_TTY=$(tty)
 
 export RUBY_YJIT_ENABLE=1
 
-export PGGSSENCMODE=disable
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOMEBREW_PREFIX/opt/postgresql@15/bin:$PATH"
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

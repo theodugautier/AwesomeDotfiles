@@ -52,7 +52,6 @@ return packer.startup(function(use)
   -- code fasters
   use 'Raimondi/delimitMate' -- auto close colon
   use 'mattn/emmet-vim' -- emmet for vim
-  -- use 'klen/nvim-test' -- launch tests in nvim
   use 'tpope/vim-surround' -- just tpope the GOD OF VIM
   use 'ap/vim-css-color' -- colors display
   use 'terrortylor/nvim-comment' -- comments tools
@@ -82,15 +81,22 @@ return packer.startup(function(use)
   -- discord presences
   use 'andweeb/presence.nvim'
 
+  -- IA
+  use { "zbirenbaum/copilot.lua" }
+
   -- others utilities
   use 'nvim-telescope/telescope.nvim' -- equivalent ctrl-p, fzf
   use({ "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } }) -- silver search with telescope
   use 'windwp/nvim-autopairs' -- auto brackets pairing
   use 'lewis6991/gitsigns.nvim' -- git graphic helpers
   use 'bronson/vim-trailing-whitespace' -- detect trailing-whitespace
-  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
+  use 'nvim-tree/nvim-web-devicons' -- use devicons
+  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
   use "luukvbaal/stabilize.nvim" -- to fix my fucking headache when openclosed panes
   use 'f-person/git-blame.nvim'
+  use {'akinsho/git-conflict.nvim', tag = "*", config = function() -- conflict management
+    require('git-conflict').setup()
+  end}
 
   if packer_bootstrap then
     require('packer').sync()

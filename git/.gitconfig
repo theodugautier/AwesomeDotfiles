@@ -1,18 +1,4 @@
-[core]
-  editor = vim
-  symlinks = true
-[init]
-  defaultBranch = main
-[alias]
-  oups = commit --amend --no-edit
-  cob = checkout -b
-  co = checkout
-  s = status
-  del = branch -D
-  done = !git push origin HEAD
-[user]
-	name = Théo Dugautier
-	email = theo@hoggo.com
-	; signingkey = 9323DA88230C8BCF
-[commit]
-	; gpgsign = true
+[includeIf "gitdir:~/projects/Personal/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/projects/Lounna/"]
+  path = ~/.gitconfig-lounna

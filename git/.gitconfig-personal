@@ -1,0 +1,16 @@
+[core]
+  editor = vim
+  symlinks = true
+[init]
+  defaultBranch = main
+[alias]
+  oups = commit --amend --no-edit
+  cob = checkout -b
+  co = checkout
+  s = status
+  del = branch -D
+  done = !git push origin HEAD
+[user]
+	name = Torpenn
+	email = ciscau@proton.me
+

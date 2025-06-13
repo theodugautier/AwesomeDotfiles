@@ -1,8 +1,10 @@
-  local ok, tree = pcall(require, 'nvim-tree')
+local ok, tree = pcall(require, 'nvim-tree')
 if (not ok) then return end
 
 vim.keymap.set('', '<C-f>', ':NvimTreeFindFile<CR>')
 vim.keymap.set('', '<C-t>', ':NvimTreeToggle<CR>')
+
+require'nvim-web-devicons'.get_icons()
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded = 1
